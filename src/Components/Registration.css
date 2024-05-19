@@ -57,23 +57,26 @@ form div {
   margin-bottom: 20px;
 }
 
-.labels {
-  margin-bottom: 5px;
-}
-input[type="text"],
-input[type="email"],
-input[type="date"] {
-  margin-top: 10px;
-}
 .radio-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px; /* Add some spacing between radio buttons and error message */
+  position: relative; /* Add relative positioning */
 }
 
 input[type="radio"] {
-  margin-right: 5px; /* Adjust spacing between radio buttons */
+  margin-right: 5px;
 }
 .choice {
   font-size: 15px;
   padding: 5px;
+}
+.error-message {
+  color: red;
+  font-size: 12px; /* Adjust the font size */
+  margin-top: 5px; /* Adjust the margin */
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
 }
