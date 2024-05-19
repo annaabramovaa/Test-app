@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Registration.css";
 import { useNavigate } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -8,6 +8,14 @@ function Registration() {
   const goBack = () => {
     navigate(-1);
   };
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleRadioChange = (e) => {
+    const { value } = e.target;
+    setSelectedOption(selectedOption === value ? "" : value);
+  };
+
   return (
     <div>
       <div className="registration">
@@ -43,19 +51,34 @@ function Registration() {
               />
             </div>
             <p>Where did you hear about this event?</p>
-            <div>
-              <input type="radio" id="radio" value="Social_media" />
-              <label className="choice" htmlFor="radio">
-                Social media
-              </label>
-              <input type="radio" id="radio" value="Friends" />
-              <label className="choice" htmlFor="radio">
-                Friends
-              </label>
-              <input type="radio" id="radio" value="Found_myself" />
-              <label className="choice" htmlFor="radio">
-                Found myself
-              </label>
+            <div className="radio-container">
+              <input
+                type="radio"
+                id="social_media"
+                name="source"
+                value="Social_media"
+                checked={selectedOption === "Social_media"}
+                onChange={handleRadioChange}
+              />
+              <label htmlFor="social_media">Social media</label>
+              <input
+                type="radio"
+                id="friends"
+                name="source"
+                value="Friends"
+                checked={selectedOption === "Friends"}
+                onChange={handleRadioChange}
+              />
+              <label htmlFor="friends">Friends</label>
+              <input
+                type="radio"
+                id="found_myself"
+                name="source"
+                value="Found_myself"
+                checked={selectedOption === "Found_myself"}
+                onChange={handleRadioChange}
+              />
+              <label htmlFor="found_myself">Found myself</label>
             </div>
             <input id="btn-submit" type="submit" value="Submit" />
           </form>
