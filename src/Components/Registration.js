@@ -16,18 +16,25 @@ function Registration() {
         </button>
         <div>
           <form>
+            <h3 id="event-re">Event registration</h3>
             <div>
-              <label htmlFor="name">Full name</label>
+              <label className="labels" htmlFor="name">
+                Full name
+              </label>
               <br />
               <input type="text" id="name" placeholder="Enter Full name" />
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label className="labels" htmlFor="email">
+                Email
+              </label>
               <br />
               <input type="email" id="email" placeholder="Enter Email" />
             </div>
             <div>
-              <label htmlFor="birthday">Date of birth</label>
+              <label className="labels" htmlFor="birthday">
+                Date of birth
+              </label>
               <br />
               <input
                 type="date"
@@ -38,13 +45,19 @@ function Registration() {
             <p>Where did you hear about this event?</p>
             <div>
               <input type="radio" id="radio" value="Social_media" />
-              <label htmlFor="radio">Social media</label>
+              <label className="choice" htmlFor="radio">
+                Social media
+              </label>
               <input type="radio" id="radio" value="Friends" />
-              <label htmlFor="radio">Friends</label>
+              <label className="choice" htmlFor="radio">
+                Friends
+              </label>
               <input type="radio" id="radio" value="Found_myself" />
-              <label htmlFor="radio">Found myself</label>
+              <label className="choice" htmlFor="radio">
+                Found myself
+              </label>
             </div>
-            <input type="submit" value="Submit" />
+            <input id="btn-submit" type="submit" value="Submit" />
           </form>
         </div>
       </div>
